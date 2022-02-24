@@ -19,7 +19,7 @@ public class Permissions {
      */
 
     public boolean RequestPermissions(@NonNull Context context, @NonNull String permission) {
-        if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+        if ((ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED)) {
             Log.i("requestMyPermissions",": 【 " + permission + " 】没有授权，申请权限");
             ActivityCompat.requestPermissions((Activity) context, new String[]{permission}, 100);
             return false;

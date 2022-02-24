@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 editText.setEnabled(false);
                 Permissions  permissions = new Permissions();
                 boolean Permissions = permissions.RequestPermissions(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-                if(Permissions){
+                boolean Permissions1 = permissions.RequestPermissions(MainActivity.this, Manifest.permission.INTERNET);
+                if(Permissions&&Permissions1){
                     Toast.makeText(MainActivity.this,"有这个权限",Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(MainActivity.this,"无这个权限，发起弹窗请求",Toast.LENGTH_LONG).show();
